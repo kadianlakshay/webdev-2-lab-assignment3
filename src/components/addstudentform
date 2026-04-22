@@ -1,0 +1,184 @@
+/* ─── Form Card ─── */
+.form-card {
+  border: var(--border-thick) solid var(--border);
+  background: var(--bg-card);
+  padding: 1.75rem;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.form-card--flash {
+  box-shadow: var(--shadow-brutal-green);
+  border-color: var(--accent-green);
+}
+
+/* Decorative corner marks */
+.form-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+.form-corner--tl {
+  top: -2px; left: -2px;
+  border-top: 3px solid var(--accent-blue);
+  border-left: 3px solid var(--accent-blue);
+}
+.form-corner--br {
+  bottom: -2px; right: -2px;
+  border-bottom: 3px solid var(--accent-blue);
+  border-right: 3px solid var(--accent-blue);
+}
+
+/* ─── Form ─── */
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-family: var(--text-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: var(--text-secondary);
+}
+
+.label-hint {
+  color: var(--border);
+  font-size: 0.55rem;
+}
+
+.form-input {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: var(--text-body);
+  font-size: 0.9rem;
+  padding: 10px 12px;
+  outline: none;
+  width: 100%;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  -moz-appearance: textfield;
+}
+.form-input::-webkit-inner-spin-button,
+.form-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.form-input::placeholder {
+  color: #444;
+}
+.form-input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 1px var(--accent-blue) inset;
+}
+
+/* ─── Score Field Wrap ─── */
+.score-field-wrap {
+  position: relative;
+}
+
+.inline-badge {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--text-mono);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 2px 6px;
+  pointer-events: none;
+}
+.inline-badge--pass {
+  color: var(--accent-green);
+  background: rgba(57, 255, 20, 0.1);
+}
+.inline-badge--fail {
+  color: var(--accent-red);
+  background: rgba(255, 45, 85, 0.1);
+}
+
+/* ─── Error ─── */
+.form-error {
+  font-family: var(--text-mono);
+  font-size: 0.68rem;
+  color: var(--accent-red);
+  border: 1px solid var(--accent-red);
+  background: rgba(255, 45, 85, 0.06);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.04em;
+}
+
+.error-icon {
+  font-weight: 900;
+  font-size: 0.75rem;
+  background: var(--accent-red);
+  color: #000;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ─── Submit Button ─── */
+.btn-add {
+  background: var(--accent-yellow);
+  color: #000;
+  border: var(--border-thick) solid var(--accent-yellow);
+  font-family: var(--text-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 14px;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.btn-add::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  transition: left 0.3s ease;
+}
+
+.btn-add:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-brutal);
+}
+
+.btn-add:hover::before {
+  left: 100%;
+}
+
+.btn-add:active {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+
+/* ─── Success ─── */
+.form-success {
+  font-family: var(--text-mono);
+  font-size: 0.68rem;
+  color: var(--accent-green);
+  text-align: center;
+  letter-spacing: 0.1em;
+  animation: slideInUp 0.25s ease;
+}
